@@ -1,4 +1,4 @@
-﻿"""
+"""
 Multiple Company Portfolio Analysis
 
 Purpose:
@@ -73,6 +73,7 @@ from plotly.subplots import make_subplots # For creating subplot layouts in Plot
 import os # For handling file paths and directories
 import webbrowser # For opening saved HTML files in the default web browser
 import random # For generating random portfolio weights in the optional section
+from pathlib import Path
 # Setup the exact target folder destination path [CHANGE THIS TO YOUR OWN FOLDER PATH]
 desktop_path = Path.home() / "Desktop"
 output_folder = desktop_path / "Multiple Stock Portfolio Analysis"
@@ -519,7 +520,7 @@ print(f"Return on Investment:    {portfolio_metrics_equal[4]:.2f}%")
 # J.1 MONTE CARLO SIMULATION CONFIGURATION & TRACKING MATRICES
 # ==============================================================================
 # Define the scale of the simulation and pull core portfolio variables
-sim_runs = int(input("Please enter the number of simulations you would like run for portfolio optimization"))  # Total number of unique random portfolio allocations to test
+sim_runs = int(input("Please enter the number of simulations you would like run for portfolio optimization: "))  # Total number of unique random portfolio allocations to test
 initial_investment = (total_investment)  # Core cash principal passed from the user prompt
 num_assets = len(ticker_list)  # Dynamically calculate the number of companies
 # Pre-allocate memory using NumPy zero-arrays to track simulation trials efficiently
@@ -613,4 +614,3 @@ print(f" [SUCCESS] Saved frontier static image chart to: {mc_png_path}")
 fig.write_html(mc_html_path)
 print(f" [SUCCESS] Saved frontier interactive web file to: {mc_html_path}")
 fig.show()
-
