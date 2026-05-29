@@ -74,7 +74,8 @@ import os # For handling file paths and directories
 import webbrowser # For opening saved HTML files in the default web browser
 import random # For generating random portfolio weights in the optional section
 # Setup the exact target folder destination path [CHANGE THIS TO YOUR OWN FOLDER PATH]
-output_folder = "d:/Alimardon/Python/Capstone Project/Multicompany analysis"
+desktop_path = Path.home() / "Desktop"
+output_folder = desktop_path / "Multiple Stock Portfolio Analysis"
 os.makedirs(output_folder, exist_ok=True)
 # A Let's begin by asking the user how many companies they want to analyze, and then we will loop through that number to collect the company names or ticker symbols. We will use yfinance to search for the ticker symbol and exact company name, and ask the user to confirm if the match is correct before saving it to a list.
 # A1. Ask the user how many companies they want to analyze
