@@ -519,7 +519,7 @@ print(f"Return on Investment:    {portfolio_metrics_equal[4]:.2f}%")
 # J.1 MONTE CARLO SIMULATION CONFIGURATION & TRACKING MATRICES
 # ==============================================================================
 # Define the scale of the simulation and pull core portfolio variables
-sim_runs = int(1000)  # Total number of unique random portfolio allocations to test
+sim_runs = int(input("Please enter the number of simulations you would like run for portfolio optimization"))  # Total number of unique random portfolio allocations to test
 initial_investment = (total_investment)  # Core cash principal passed from the user prompt
 num_assets = len(ticker_list)  # Dynamically calculate the number of companies
 # Pre-allocate memory using NumPy zero-arrays to track simulation trials efficiently
